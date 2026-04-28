@@ -77,6 +77,30 @@ def glass_cannon(df):
 
     plt.show()
 
+#Best primary type
+def primary_stats(df):
+    """
+    Creates a bar chart showing the average total stats
+    for each Pokémon primary type.
+
+    PARAMETER:
+        df: pokemon dataframe
+    """
+    df["Primary Type"] = df["Type"].str.split().str[0]
+    mean_stat = df.groupby("Primary Type")["Total"].mean()
+    mean_stat = mean_stat.sort_values(ascending = False)
+    mean_stat = mean_stat.round(2)
+
+    plt.figure()
+    bars = plt.bar(mean_stat.index, mean_stat.values, edgecolor = "black")
+    plt.bar_label(bars)
+    plt.title("Average Total Stats by Primary Type", fontsize = 20)
+    plt.xlabel("Primary Type", fontsize = 14)
+    plt.ylabel("Average Total Stats", fontsize = 14)
+    plt.xticks(rotation = 90)
+        
+    plt.show()
+
 
 def main():
     url = "https://pokemondb.net/pokedex/all"
@@ -89,6 +113,7 @@ def main():
     pokemon_df["Name"] = pokemon_df["Name"].apply(clean_names)
     
     glass_cannon(pokemon_df)
+    primary_stats(pokemon_df)
     
 
 main()
