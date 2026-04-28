@@ -1,0 +1,11 @@
+Data url: "https://pokemondb.net/pokedex/all"
+
+Explanation:
+I chose this dataset because pokemon is something that I grew up playing. I have played at least 90% of the games that have come out, and have collected as many pokemon cards as I can. 
+
+Because there are so many pokemon, I wanted to see what pokemon type was the "strongest", meaning what type had the most total stats. 
+
+I also want to look into "glass cannons" and see if there is a correlation between high speed and attack (cannon part) and their durability (glass part). A glass cannon is something that can hit very hard but cannot survive multiple hits. So basically, if there was a real glass cannon, the cannon would shatter and be useless once it fired a cannon ball out of it. If there was a negative correlation, it would mean that high attack + speed = low durability (hp, defense, sp. def) so that would classify as a glass cannon. 
+
+I then wanted to dive further into the total stats and determine who
+the strongest pokemon is according to total stats. Pokemon that have a total stat between 180-400 are considered low tier pokemon, 400-500 are considered mid tier, 500-600 are considered high tier, and 600+ are usually mega pokemon, pseudo-legendaries, or legendary pokemon. 
