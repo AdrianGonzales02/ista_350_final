@@ -101,6 +101,28 @@ def primary_stats(df):
         
     plt.show()
 
+#Top 10 pokemon
+def top_10_pokemon(df):
+    """
+    Creates a bar chart showing the top 10 strongest
+    pokemon by total stat.
+
+    PARAMETER:
+        df: pokemon dataframe
+    """
+    top10 = df.sort_values("Total", ascending=False).head(10)
+
+    plt.figure()
+    bars = plt.barh(top10["Name"], top10["Total"], edgecolor="black")
+    plt.bar_label(bars)
+    plt.title("Top 10 Pokémon by Total Stats", fontsize=20)
+    plt.xlabel("Total Stats", fontsize=14)
+    plt.ylabel("Pokémon", fontsize=14)
+    plt.gca().invert_yaxis()
+
+    plt.tight_layout()
+    plt.show()
+
 
 def main():
     url = "https://pokemondb.net/pokedex/all"
@@ -114,6 +136,6 @@ def main():
     
     glass_cannon(pokemon_df)
     primary_stats(pokemon_df)
-    
+    top_10_pokemon(pokemon_df)
 
 main()
